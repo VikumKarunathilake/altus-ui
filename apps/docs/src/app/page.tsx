@@ -2,6 +2,7 @@
 
 import { useState, useEffect, ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 interface TooltipProps {
   label: string;
@@ -358,7 +359,9 @@ export default function Home() {
                 and performance-critical interfaces.
               </p>
               <div className="flex gap-4">
-                <button className="btn-altus px-8 h-12">View Documentation</button>
+                <Link href="/docs/installation" className="btn-altus px-8 h-12 flex items-center justify-center">
+                  View Documentation
+                </Link>
                 <button className="btn-altus-outline px-8 h-12">Github</button>
               </div>
             </motion.div>
