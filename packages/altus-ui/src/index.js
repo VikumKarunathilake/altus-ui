@@ -2,16 +2,38 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = plugin(function({ addBase, addComponents, theme }) {
   addBase({
+    /* Default Theme (Slate) */
     ':root': {
-      '--alt-bg': '#fcfcf9', /* Ivory */
+      '--alt-bg': '#f1f5f9', /* Slate 100 */
+      '--alt-fg': '#0f172a', /* Slate 900 */
+      '--alt-muted': '#e2e8f0', /* Slate 200 */
+      '--alt-border': '#cbd5e1', /* Slate 300 */
+      '--alt-primary': '#475569', /* Slate 600 */
+      '--alt-radius': '0.5rem',
+      '--alt-ring': 'rgba(71,85,105,0.1)',
+      '--alt-shadow': '0 4px 6px -1px rgba(0,0,0,0.05)',
+    },
+    /* Ivory Theme */
+    '[data-theme="ivory"]': {
+      '--alt-bg': '#fcfcf9',
       '--alt-fg': '#1a1a1a',
       '--alt-muted': '#f3f3ee',
       '--alt-border': '#e6e6e0',
       '--alt-primary': '#5c5c5c',
-      '--alt-radius': '0.5rem',
       '--alt-ring': 'rgba(0,0,0,0.1)',
       '--alt-shadow': '0 4px 12px rgba(0,0,0,0.05)',
     },
+    /* Cherry Theme (Slick/Professional Dark Red) */
+    '[data-theme="cherry"]': {
+      '--alt-bg': '#1a0a0a',
+      '--alt-fg': '#fff5f5',
+      '--alt-muted': '#2d1515',
+      '--alt-border': '#4a1a1a',
+      '--alt-primary': '#f56565',
+      '--alt-ring': 'rgba(245,101,101,0.2)',
+      '--alt-shadow': '0 10px 25px -5px rgba(0,0,0,0.4)',
+    },
+    /* Navy Theme */
     '[data-theme="navy"]': {
       '--alt-bg': '#0f172a',
       '--alt-fg': '#f8fafc',
@@ -21,6 +43,7 @@ module.exports = plugin(function({ addBase, addComponents, theme }) {
       '--alt-ring': 'rgba(56,189,248,0.2)',
       '--alt-shadow': '0 10px 25px -5px rgba(0,0,0,0.3)',
     },
+    /* Obsidian Theme */
     '[data-theme="obsidian"]': {
       '--alt-bg': '#000000',
       '--alt-fg': '#ffffff',
@@ -29,15 +52,6 @@ module.exports = plugin(function({ addBase, addComponents, theme }) {
       '--alt-primary': '#ffffff',
       '--alt-ring': 'rgba(255,255,255,0.1)',
       '--alt-shadow': '0 8px 30px rgba(0,0,0,0.5)',
-    },
-    '[data-theme="slate"]': {
-      '--alt-bg': '#f8fafc',
-      '--alt-fg': '#1e293b',
-      '--alt-muted': '#f1f5f9',
-      '--alt-border': '#e2e8f0',
-      '--alt-primary': '#475569',
-      '--alt-ring': 'rgba(71,85,105,0.1)',
-      '--alt-shadow': '0 4px 6px -1px rgba(0,0,0,0.05)',
     },
     'body': {
       'backgroundColor': 'var(--alt-bg)',

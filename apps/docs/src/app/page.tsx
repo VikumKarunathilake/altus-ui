@@ -4,19 +4,27 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("gallery");
+  const [currentTheme, setCurrentTheme] = useState("slate");
 
   useEffect(() => {
     setMounted(true);
+    const savedTheme = localStorage.getItem("altus-theme") || "slate";
+    setCurrentTheme(savedTheme);
+    applyTheme(savedTheme);
   }, []);
 
-  const setTheme = (theme: string) => {
-    setCurrentTheme(theme);
-    if (theme === "gallery") {
+  const applyTheme = (theme: string) => {
+    if (theme === "slate") {
       document.documentElement.removeAttribute("data-theme");
     } else {
       document.documentElement.setAttribute("data-theme", theme);
     }
+  };
+
+  const handleSetTheme = (theme: string) => {
+    setCurrentTheme(theme);
+    localStorage.setItem("altus-theme", theme);
+    applyTheme(theme);
   };
 
   if (!mounted) return null;
@@ -33,10 +41,10 @@ export default function Home() {
         </div>
         
         <div className="flex bg-altus-muted p-1 rounded-lg border border-altus-border gap-1">
-          {["gallery", "slate", "navy", "obsidian"].map((t) => (
+          {["slate", "navy", "obsidian", "ivory", "cherry"].map((t) => (
             <button
               key={t}
-              onClick={() => setTheme(t)}
+              onClick={() => handleSetTheme(t)}
               className={`px-3 py-1.5 text-xs font-medium rounded-md capitalize transition-all ${
                 currentTheme === t ? "bg-altus-bg shadow-sm text-altus-fg" : "text-altus-fg/50 hover:text-altus-fg"
               }`}
@@ -70,16 +78,16 @@ export default function Home() {
             <div className="flex flex-wrap gap-4 py-8 items-center justify-center bg-altus-muted/30 rounded-altus border border-dashed border-altus-border">
               <button className="btn-altus">Primary Action</button>
               <button className="btn-altus-outline">Secondary Action</button>
-              <button className="text-sm font-medium hover:underline px-4">Ghost Button</button>
+              <button className="text-sm font-medium hover:underline px-4 cursor-pointer">Ghost Button</button>
             </div>
           </div>
 
           {/* Theme Indicator Card */}
           <div className="altus-card flex flex-col justify-between overflow-hidden relative group">
-            <h2 className="text-sm font-semibold uppercase tracking-wider opacity-50">Dynamic Theme</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-wider opacity-50">Active Palette</h2>
             <div className="mt-8">
               <p className="text-3xl font-bold capitalize">{currentTheme}</p>
-              <p className="text-sm opacity-60">System Synchronized</p>
+              <p className="text-sm opacity-60">Persistent Settings</p>
             </div>
             <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-altus-primary/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
           </div>
@@ -95,7 +103,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Stats / Interactive Block */}
+          {/* Interactive Block */}
           <div className="lg:col-span-2 altus-card grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { label: "Performance", value: "99%" },
