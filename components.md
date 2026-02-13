@@ -1,6 +1,6 @@
 # Altus UI Component Roadmap
 
-This document tracks the development of the Altus UI "Slick & Professional" component suite.
+This document tracks the development of the Altus UI component suite.
 
 ## 🟢 Foundations (Tokens & Global)
 - [x] Design Tokens (Colors: Slate, Navy, Obsidian, Ivory, Mocha)
@@ -43,3 +43,5 @@ This document tracks the development of the Altus UI "Slick & Professional" comp
 - [ ] Progress Bar (Minimalist)
 - [x] Loading Spinner (Geometric)
 - [x] Skeleton Loaders
+
+You can suggest more [here](https://github.com/Skullmc1/altus-ui/issues/new).
