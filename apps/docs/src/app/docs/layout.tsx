@@ -25,9 +25,12 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           <div>
             <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-40 mb-4">Components</h4>
             <ul className="space-y-2">
-              <li><Link href="/docs/buttons" className="text-sm font-medium hover:text-altus-primary transition-colors opacity-50 cursor-not-allowed">Buttons</Link></li>
+              <li><Link href="/docs/buttons" className="text-sm font-medium hover:text-altus-primary transition-colors">Buttons</Link></li>
+              <li><Link href="/docs/inputs" className="text-sm font-medium hover:text-altus-primary transition-colors">Inputs & Forms</Link></li>
+              <li><Link href="/docs/cards" className="text-sm font-medium hover:text-altus-primary transition-colors">Cards & Layout</Link></li>
+              <li><Link href="/docs/modals" className="text-sm font-medium hover:text-altus-primary transition-colors">Modals</Link></li>
               <li><Link href="/docs/toasts" className="text-sm font-medium hover:text-altus-primary transition-colors">Toasts</Link></li>
-              <li><Link href="/docs/modals" className="text-sm font-medium hover:text-altus-primary transition-colors opacity-50 cursor-not-allowed">Modals</Link></li>
+              <li><Link href="/docs/accordion" className="text-sm font-medium hover:text-altus-primary transition-colors">Accordion</Link></li>
             </ul>
           </div>
         </nav>
