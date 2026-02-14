@@ -46,7 +46,14 @@ export function Hero() {
               </Link>
             </WithTooltip>
             <WithTooltip label=".btn-altus-outline">
-              <button className="btn-altus-outline px-8 h-12">Github</button>
+              <a 
+                href="https://github.com/Skullmc1/altus-ui" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="btn-altus-outline px-8 h-12 flex items-center justify-center"
+              >
+                Github
+              </a>
             </WithTooltip>
           </div>
         </motion.div>

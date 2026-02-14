@@ -126,8 +126,23 @@ export default function Home() {
                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div className="flex flex-col gap-6 mb-12">
-              {["Components", "Showcase", "Resources", "GitHub"].map((link, i) => (
-                <motion.a key={link} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.1 + 0.2 }} href="#" className="altus-nav-link">{link}</motion.a>
+              {[
+                { name: "Components", href: "/docs/buttons" },
+                { name: "Showcase", href: "/docs/carousel" },
+                { name: "Resources", href: "/docs/installation" },
+                { name: "GitHub", href: "https://github.com/Skullmc1/altus-ui" }
+              ].map((link, i) => (
+                <motion.a 
+                  key={link.name} 
+                  initial={{ opacity: 0, x: -20 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  transition={{ delay: i * 0.1 + 0.2 }} 
+                  href={link.href} 
+                  className="altus-nav-link"
+                  target={link.href.startsWith('http') ? "_blank" : undefined}
+                >
+                  {link.name}
+                </motion.a>
               ))}
             </div>
           </motion.div>
@@ -198,7 +213,7 @@ export default function Home() {
                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
             <div className="hidden sm:block">
-              <button className="btn-altus py-2 text-[10px] tracking-widest">GET STARTED</button>
+              <Link href="/docs/installation" className="btn-altus py-2 text-[10px] tracking-widest">GET STARTED</Link>
             </div>
           </div>
         </div>
