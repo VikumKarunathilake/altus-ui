@@ -65,11 +65,43 @@ export default function InputsPage() {
 // Switch
 <input type="checkbox" className="altus-switch" />`} />
       </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-bold tracking-tight">Input Groups</h2>
+        <p className="opacity-70 text-sm">Enhanced form elements with hints, labels, and validation states.</p>
+        <Preview>
+          <div className="w-full max-w-sm space-y-6">
+            <div className="altus-input-group">
+              <label className="altus-label">Username</label>
+              <input type="text" className="altus-input" placeholder="johndoe" />
+              <span className="altus-input-hint">Your unique identifier on Altus.</span>
+            </div>
+
+            <div className="altus-input-group">
+              <label className="altus-label">API Key</label>
+              <input type="text" className="altus-input altus-input-invalid" value="invalid-key-123" readOnly />
+              <span className="altus-input-error-msg">This API key has been revoked.</span>
+            </div>
+          </div>
+        </Preview>
+        <CodeBlock code={`<div className="altus-input-group">
+  <label className="altus-label">Username</label>
+  <input className="altus-input" />
+  <span className="altus-input-hint">Hint text here.</span>
+</div>
+
+<div className="altus-input-group">
+  <label className="altus-label">Error State</label>
+  <input className="altus-input altus-input-invalid" />
+  <span className="altus-input-error-msg">Validation message.</span>
+</div>`} />
+      </section>
+
       <DocFooter 
         backHref="/docs/buttons" 
         backLabel="Buttons"
-        nextHref="/docs/cards" 
-        nextLabel="Cards & Layout" 
+        nextHref="/docs/navbar" 
+        nextLabel="Sticky Navbar" 
       />
     </div>
   );

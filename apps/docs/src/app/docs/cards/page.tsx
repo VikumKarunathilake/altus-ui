@@ -37,8 +37,8 @@ export default function CardsPage() {
         <CodeBlock code={`<div className="altus-divider" />`} />
       </section>
       <DocFooter 
-        backHref="/docs/inputs" 
-        backLabel="Inputs & Forms"
+        backHref="/docs/breadcrumbs" 
+        backLabel="Breadcrumbs"
         nextHref="/docs/modals" 
         nextLabel="Modals" 
       />

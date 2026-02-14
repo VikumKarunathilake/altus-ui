@@ -52,6 +52,14 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           </li>
           <li>
             <Link 
+              href="/docs/cli" 
+              className={`text-sm font-semibold transition-all hover:translate-x-1 inline-block ${pathname === '/docs/cli' ? 'text-altus-primary' : 'text-altus-fg/60 hover:text-altus-fg'}`}
+            >
+              CLI
+            </Link>
+          </li>
+          <li>
+            <Link 
               href="/docs/theming" 
               className={`text-sm font-semibold transition-all hover:translate-x-1 inline-block ${pathname === '/docs/theming' ? 'text-altus-primary' : 'text-altus-fg/60 hover:text-altus-fg'}`}
             >
@@ -67,6 +75,10 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
           {[
             { name: "Buttons", href: "/docs/buttons" },
             { name: "Inputs & Forms", href: "/docs/inputs" },
+            { name: "Navbar", href: "/docs/navbar" },
+            { name: "Progress", href: "/docs/progress" },
+            { name: "Carousel", href: "/docs/carousel" },
+            { name: "Breadcrumbs", href: "/docs/breadcrumbs" },
             { name: "Cards & Layout", href: "/docs/cards" },
             { name: "Modals", href: "/docs/modals" },
             { name: "Toasts", href: "/docs/toasts" },

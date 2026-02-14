@@ -11,28 +11,42 @@ export default function InstallationPage() {
       />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold tracking-tight">1. Install Packages</h2>
-        <p className="opacity-70 text-sm">Altus UI is split into a core Tailwind plugin and a CLI for rapid scaffolding.</p>
-        <CodeBlock code={`bun add @altus-ui/core
-bun add -d @altus-ui/cli`} />
+        <h2 className="text-xl font-bold tracking-tight text-altus-primary">Quick Start (Recommended)</h2>
+        <p className="opacity-70 text-sm">The fastest way to get started is using the Altus CLI. It handles framework detection, dependency installation, and Tailwind configuration automatically.</p>
+        <CodeBlock code={`bun x @altus-ui/cli init`} />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold tracking-tight">2. Configure Tailwind</h2>
-        <p className="opacity-70 text-sm">Add the plugin to your <code className="bg-altus-muted px-1.5 py-0.5 rounded">tailwind.config.js</code> or CSS file.</p>
-        <CodeBlock code={`@import "tailwindcss";
-@plugin "@altus-ui/core";`} />
+        <h2 className="text-xl font-bold tracking-tight">Manual Installation</h2>
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <h3 className="text-sm font-black uppercase tracking-widest opacity-40">1. Install core package</h3>
+            <CodeBlock code={`bun add @altus-ui/core`} />
+          </div>
+          
+          <div className="space-y-2">
+            <h3 className="text-sm font-black uppercase tracking-widest opacity-40">2. Add to Tailwind Config</h3>
+            <p className="opacity-70 text-sm">Include the Altus plugin in your <code className="bg-altus-muted px-1.5 py-0.5 rounded">tailwind.config.js</code>.</p>
+            <CodeBlock code={`// tailwind.config.js
+module.exports = {
+  // ...
+  plugins: [
+    require("@altus-ui/core"),
+  ],
+}`} />
+          </div>
+        </div>
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold tracking-tight">3. Initialize via CLI</h2>
-        <p className="opacity-70 text-sm">Coming soon: Use the CLI to scaffold themes and component structures.</p>
-        <CodeBlock code="bun x altus init" />
+        <h2 className="text-xl font-bold tracking-tight">Next Steps</h2>
+        <p className="opacity-70 text-sm">Once installed, you can start adding components directly to your codebase.</p>
+        <CodeBlock code={`bun x @altus-ui/cli add button`} />
       </section>
 
       <DocFooter 
-        nextHref="/docs/theming" 
-        nextLabel="Theming" 
+        nextHref="/docs/cli" 
+        nextLabel="Command Line Interface" 
       />
     </div>
   );

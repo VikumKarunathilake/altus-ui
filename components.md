@@ -20,14 +20,14 @@ This document tracks the development of the Altus UI component suite.
 - [x] Professional Card (`altus-card`)
 - [x] Bento Grid System
 - [x] Section Divider (Architectural Line)
-- [ ] Aspect Ratio Containers
-- [ ] Sticky Navbar Template
+- [x] Sticky Navbar Template
+- [x] Breadcrumbs
 
 ## 🟣 Form Elements
 - [x] Text Input (Slick variant)
 - [x] Checkbox & Radio
 - [x] Select / Dropdown
-- [ ] Input Group (with labels & hints)
+- [x] Input Group (with labels & hints)
 - [x] Segmented Control (Theme Switcher style)
 
 ## 🔴 Complex Components
@@ -36,11 +36,11 @@ This document tracks the development of the Altus UI component suite.
 - [x] Accordion / Disclosure
 - [x] Tooltip (Soft shadow)
 - [x] Toast Notifications
-- [ ] Project Slider (Carousel)
+- [x] Project Slider (Carousel)
 
 ## ⚪ Feedback & Status
 - [x] Badge / Tag
-- [ ] Progress Bar (Minimalist)
+- [x] Progress Bar (Minimalist)
 - [x] Loading Spinner (Geometric)
 - [x] Skeleton Loaders
 

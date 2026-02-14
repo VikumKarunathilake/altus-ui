@@ -57,8 +57,8 @@ export default function ThemingPage() {
 }`} language="css" />
       </section>
       <DocFooter 
-        backHref="/docs/installation" 
-        backLabel="Installation"
+        backHref="/docs/cli" 
+        backLabel="Command Line Interface"
         nextHref="/docs/buttons" 
         nextLabel="Buttons" 
       />
